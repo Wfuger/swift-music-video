@@ -10,40 +10,50 @@ import Foundation
 
 class APIManager {
     
-    func loadData( urlString : String, completion : ( result : String ) -> Void ) {
+    func loadData( urlString : String, completion : [Videos] -> Void ) {
         
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         
         let session = NSURLSession( configuration: config )
         
         
-//        let session = NSURLSession.sharedSession()
+
         let url = NSURL( string : urlString )!
         
         let task = session.dataTaskWithURL( url ) {
             (data, response, error) -> Void in
             
                 if error != nil {
-                    dispatch_async( dispatch_get_main_queue() ) {
-                        completion( result: ( error!.localizedDescription ) )
-                    }
+                    
+                        print( error!.localizedDescription )
+                    
                 } else {
                         do {
                             if let json = try NSJSONSerialization.JSONObjectWithData( data!, options : .AllowFragments )
-                                as? JSONDictionary {
-                                    print( json )
+                                as? JSONDictionary,
+                                feed = json["feed"] as? JSONDictionary,
+                                entries = feed["entry"] as? JSONArray {
+                                
+                                    var videos = [Videos]()  //Initialized an array with our Videos class as each index
+                                    for entry in entries {
+                                        let entry = Videos(data: entry as! JSONDictionary)
+                                        videos.append(entry)
+                                    }
+                                
+                                let i = videos.count
+                                print("iTunesApiManage - total count --> \(i)")
+                                print(" ")
+                                    //print( json )
                         
                                     let priority = DISPATCH_QUEUE_PRIORITY_HIGH
                                     dispatch_async( dispatch_get_global_queue( priority, 0 ) ) {
                                         dispatch_async( dispatch_get_main_queue() ) {
-                                            completion( result: "JSONSerialization Successful" )
+                                            completion( videos )
                                         }
                                     }
                                 }
                         } catch {
-                            dispatch_async( dispatch_get_main_queue() ) {
-                                completion( result: "Error in NSJONSerialization" )
-                            }
+                            print("error in NSJSONSerialization")
                         }
                 }
         }

@@ -11,15 +11,18 @@ import Foundation
 class Videos {
     
     private var _vName: String
-    private var _vRights: String // Need to initialize
-    private var _vPrice: String // Need to initialize
+    private var _vRights: String
+    private var _vPrice: String
     private var _vImageUrl: String
-    private var _vArtist: String // Need to initialize
+    private var _vArtist: String
     private var _vVideoUrl: String
-    private var _vImid: String // Need to initialize
-    private var _vGenre: String // Need to initialize
-    private var _vLinkToiTunes: String // Need to initialize
-    private var _vReleaseDte: String // Need to initialize
+    private var _vImid: String
+    private var _vGenre: String
+    private var _vLinkToiTunes: String
+    private var _vReleaseDte: String
+    
+    // This variable gets created from the UI
+    var vImageData:NSData?
     
     
     var vName: String {
@@ -63,7 +66,7 @@ class Videos {
     }
     
     
-    init(data: JSONDictionary) {
+    init( data: JSONDictionary ) {
         
         if let name = data["im:name"] as? JSONDictionary,
             vName = name["label"] as? String {
@@ -124,7 +127,8 @@ class Videos {
         }
         
         if let imid = data["id"] as? JSONDictionary,
-            vImid = imid["label"] as? String {
+            ImId = imid["attributes"] as? JSONDictionary,
+            vImid = ImId["im:id"] as? String {
                 self._vImid = vImid
         }
         else
@@ -134,7 +138,7 @@ class Videos {
         
         if let genre = data["category"] as? JSONDictionary,
             Genre = genre["attributes"] as? JSONDictionary,
-            vGenre = Genre["label"] as? String {
+            vGenre = Genre["term"] as? String {
             self._vGenre = vGenre
         }
         else
@@ -153,14 +157,14 @@ class Videos {
         }
         
         if let releaseDate = data["im:releaseDate"] as? JSONDictionary,
-            vReleaseDte = releaseDate["label"] as? String {
+            ReleaseDte = releaseDate["attributes"] as? JSONDictionary,
+            vReleaseDte = ReleaseDte["label"] as? String {
                 self._vReleaseDte = vReleaseDte
         }
         else
         {
             _vReleaseDte = ""
         }
-        
         
     }
     
