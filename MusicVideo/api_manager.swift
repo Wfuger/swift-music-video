@@ -16,7 +16,6 @@ class APIManager {
         
         let session = NSURLSession( configuration: config )
     
-
         let url = NSURL( string : urlString )!
         
         let task = session.dataTaskWithURL( url ) {
@@ -34,6 +33,7 @@ class APIManager {
                                 entries = feed["entry"] as? JSONArray {
                                 
                                     var videos = [Videos]()  //Initialized an array with our Videos class as each index
+                                
                                     for entry in entries {
                                         let entry = Videos(data: entry as! JSONDictionary)
                                         videos.append(entry)
