@@ -9,7 +9,7 @@
 import UIKit
 var reachability : Reachability?
 
-var reachabilityStatus = WIFI
+var reachabilityStatus = " "
 
 
 @UIApplicationMain
@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         internetCheck = Reachability.reachabilityForInternetConnection()
         internetCheck?.startNotifier()
+        statusChangedWithReachability(internetCheck!)
         
         
         // Override point for customization after application launch.
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func reachabilityChanged(notification: NSNotification) {
         reachability = notification.object as? Reachability
         statusChangedWithReachability(reachability!)
-        
+    
     }
     
     func statusChangedWithReachability(currentReachabilityStatus: Reachability) {
