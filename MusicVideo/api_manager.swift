@@ -34,8 +34,9 @@ class APIManager {
                                 
                                     var videos = [Videos]()  //Initialized an array with our Videos class as each index
                                 
-                                    for entry in entries {
+                                    for (index, entry) in entries.enumerate() {
                                         let entry = Videos(data: entry as! JSONDictionary)
+                                        entry.vRank = index + 1
                                         videos.append(entry)
                                     }
                                 

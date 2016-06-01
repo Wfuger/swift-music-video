@@ -47,7 +47,7 @@ class MusicVideoTVC: UITableViewController {
         switch reachabilityStatus {
             
         case NOACCESS :
-            view.backgroundColor = UIColor.redColor()
+            //view.backgroundColor = UIColor.redColor()
             
             // move back to Main Queue
             dispatch_async(dispatch_get_main_queue()) {
@@ -80,11 +80,17 @@ class MusicVideoTVC: UITableViewController {
             }
             
         default:
-            view.backgroundColor = UIColor.greenColor()
+            
+            //view.backgroundColor = UIColor.greenColor()
+            
             if videos.count > 0 {
+                
                 print("do not refresh API")
+            
             } else {
+            
                 runAPI()
+            
             }
 
         }
@@ -96,7 +102,7 @@ class MusicVideoTVC: UITableViewController {
         //Call Api from api manager in model
         let api = APIManager()
         
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json",
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/json",
                      completion: didLoadData)
     
     }
@@ -119,18 +125,24 @@ class MusicVideoTVC: UITableViewController {
         return videos.count
     }
 
+    private struct storyboard {
+        static let cellReuseIdentifier = "cell"
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideoTableViewCell
 
-        let video = videos[indexPath.row]
+        cell.video = videos[indexPath.row]
         
-        cell.textLabel?.text = ("\(indexPath.row + 1) \(video.vArtist)")
-        cell.detailTextLabel?.text = ("\(video.vName)")
+//        cell.textLabel?.text = ("\(cell.video!.vRank) \(cell.video!.vArtist)")
+//        cell.detailTextLabel?.text = ("\(cell.video!.vName)")
 
         return cell
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 132
+    }
 
     /*
     // Override to support conditional editing of the table view.

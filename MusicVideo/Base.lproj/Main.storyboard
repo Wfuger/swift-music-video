@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Music VideoTVC-->
@@ -14,31 +15,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="MoE-7o-phG" detailTextLabel="2Cz-eg-8hD" style="IBUITableViewCellStyleSubtitle" id="hlj-LU-ctD">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="hlj-LU-ctD" customClass="MusicVideoTableViewCell" customModule="MusicVideo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hlj-LU-ctD" id="3TK-VM-fXJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="131"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MoE-7o-phG">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A4P-FY-c3G">
+                                            <rect key="frame" x="8" y="8" width="152" height="115"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="152" id="Bxq-yE-Jc1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Butt Stuff" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH2-qg-oYs">
+                                            <rect key="frame" x="168" y="40" width="424" height="83"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Cz-eg-8hD">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-ne-rmF">
+                                            <rect key="frame" x="168" y="15" width="109" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="31A-Mh-4Fv"/>
+                                                <constraint firstAttribute="width" constant="109" id="dBW-rJ-Gsy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="1" green="0.98039215690000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="A4P-FY-c3G" firstAttribute="bottom" secondItem="3TK-VM-fXJ" secondAttribute="bottomMargin" id="256-0u-BWu"/>
+                                        <constraint firstItem="d0n-ne-rmF" firstAttribute="top" secondItem="3TK-VM-fXJ" secondAttribute="topMargin" constant="7" id="NXU-ny-U4w"/>
+                                        <constraint firstItem="A4P-FY-c3G" firstAttribute="bottom" secondItem="IH2-qg-oYs" secondAttribute="bottom" id="QXy-eQ-k5e"/>
+                                        <constraint firstItem="d0n-ne-rmF" firstAttribute="leading" secondItem="IH2-qg-oYs" secondAttribute="leading" id="cyq-rk-Hw5"/>
+                                        <constraint firstItem="IH2-qg-oYs" firstAttribute="trailing" secondItem="3TK-VM-fXJ" secondAttribute="trailingMargin" id="erk-FH-Wi3"/>
+                                        <constraint firstItem="A4P-FY-c3G" firstAttribute="leading" secondItem="3TK-VM-fXJ" secondAttribute="leadingMargin" id="fR4-0X-qZO"/>
+                                        <constraint firstItem="A4P-FY-c3G" firstAttribute="top" secondItem="3TK-VM-fXJ" secondAttribute="topMargin" id="gf3-6X-A1a"/>
+                                        <constraint firstItem="IH2-qg-oYs" firstAttribute="top" secondItem="d0n-ne-rmF" secondAttribute="bottom" constant="1" id="kj5-a0-iYb"/>
+                                        <constraint firstItem="d0n-ne-rmF" firstAttribute="leading" secondItem="A4P-FY-c3G" secondAttribute="trailing" constant="8" symbolic="YES" id="ov2-oD-dea"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="musicImage" destination="A4P-FY-c3G" id="lRi-hH-pc6"/>
+                                    <outlet property="musicTitle" destination="IH2-qg-oYs" id="LEN-Km-J0R"/>
+                                    <outlet property="rank" destination="d0n-ne-rmF" id="dIc-RM-oee"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="txz-kE-Idh" id="e7e-Wb-Sdg"/>
                             <outlet property="delegate" destination="txz-kE-Idh" id="e25-E4-rGn"/>
@@ -60,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CQK-dc-ZOE">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="CQK-dc-ZOE">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
