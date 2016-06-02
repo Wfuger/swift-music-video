@@ -20,6 +20,7 @@
 		768710A71CED7CA800410B88 /* api_manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768710A61CED7CA800410B88 /* api_manager.swift */; };
 		76BD95E61CFE46A30015B198 /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD95E51CFE46A30015B198 /* MusicVideoTVC.swift */; };
 		76BD95E81CFE5E6E0015B198 /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD95E71CFE5E6E0015B198 /* MusicVideoTableViewCell.swift */; };
+		76BD95EA1CFFE86E0015B198 /* MusicVideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD95E91CFFE86E0015B198 /* MusicVideoDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		768710A61CED7CA800410B88 /* api_manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_manager.swift; sourceTree = "<group>"; };
 		76BD95E51CFE46A30015B198 /* MusicVideoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTVC.swift; sourceTree = "<group>"; };
 		76BD95E71CFE5E6E0015B198 /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
+		76BD95E91CFFE86E0015B198 /* MusicVideoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		768710A31CED784C00410B88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76BD95E91CFFE86E0015B198 /* MusicVideoDetailVC.swift */,
 				76BD95E51CFE46A30015B198 /* MusicVideoTVC.swift */,
 				76BD95E71CFE5E6E0015B198 /* MusicVideoTableViewCell.swift */,
 				768710761CED749100410B88 /* ViewController.swift */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				768710A71CED7CA800410B88 /* api_manager.swift in Sources */,
+				76BD95EA1CFFE86E0015B198 /* MusicVideoDetailVC.swift in Sources */,
 				768710771CED749100410B88 /* ViewController.swift in Sources */,
 				763F77061CF16B5500D1D015 /* MusicVideo.swift in Sources */,
 				76BD95E81CFE5E6E0015B198 /* MusicVideoTableViewCell.swift in Sources */,
