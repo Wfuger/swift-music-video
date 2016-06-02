@@ -133,9 +133,6 @@ class MusicVideoTVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideoTableViewCell
 
         cell.video = videos[indexPath.row]
-        
-//        cell.textLabel?.text = ("\(cell.video!.vRank) \(cell.video!.vArtist)")
-//        cell.detailTextLabel?.text = ("\(cell.video!.vName)")
 
         return cell
     }
