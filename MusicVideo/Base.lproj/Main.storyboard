@@ -62,7 +62,7 @@
                                     <outlet property="musicImage" destination="A4P-FY-c3G" id="lRi-hH-pc6"/>
                                     <outlet property="musicTitle" destination="IH2-qg-oYs" id="LEN-Km-J0R"/>
                                     <outlet property="rank" destination="d0n-ne-rmF" id="dIc-RM-oee"/>
-                                    <segue destination="Myz-Oe-tiB" kind="show" id="x0C-tl-TP2"/>
+                                    <segue destination="Myz-Oe-tiB" kind="show" identifier="musicDetail" id="x0C-tl-TP2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,7 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-Q8-Ltf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-Q8-Ltf">
                                 <rect key="frame" x="1" y="132" width="599" height="282"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-he-A4L">
@@ -107,7 +107,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="iXm-LB-t2r"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -117,7 +117,7 @@
                                     <constraint firstAttribute="height" constant="34" id="5nb-ij-otC"/>
                                     <constraint firstAttribute="width" constant="76" id="p3c-WG-Lt7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -126,7 +126,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="QB2-HZ-Ii0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -159,6 +159,13 @@
                             <color key="tintColor" red="1" green="0.01132959838" blue="0.031957017919999997" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="vGenre" destination="7gK-u2-4eg" id="XAm-ZV-0sF"/>
+                        <outlet property="vName" destination="sGc-he-A4L" id="tau-ud-WHD"/>
+                        <outlet property="vPrice" destination="biZ-lZ-q1c" id="zHb-r0-bNw"/>
+                        <outlet property="vRights" destination="BoE-2m-Agj" id="LPk-yh-Xso"/>
+                        <outlet property="videoImage" destination="vDY-Q8-Ltf" id="B7I-hQ-Zgg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY6-6a-moB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
