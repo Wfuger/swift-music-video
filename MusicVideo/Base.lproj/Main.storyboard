@@ -430,6 +430,9 @@
                     <toolbarItems>
                         <barButtonItem systemItem="play" id="Raw-XI-NPf">
                             <color key="tintColor" red="1" green="0.01132959837509917" blue="0.031957017916228514" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="playVideo:" destination="Myz-Oe-tiB" id="cYN-vU-yYS"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="azp-FK-hdo"/>
                         <barButtonItem systemItem="action" id="Igf-cg-M2i">
