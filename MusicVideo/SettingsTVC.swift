@@ -39,9 +39,13 @@ class SettingsTVC: UITableViewController {
         
         if (NSUserDefaults.standardUserDefaults().objectForKey("APICNT") != nil)
         {
+            print("shit")
             let theValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
             APICnt.text = "\(theValue)"
             sliderCnt.value = Float(theValue)
+        } else {
+            sliderCnt.value = 10.0
+            APICnt.text = ("\(Int(sliderCnt.value))")
         }
         
     }
@@ -54,6 +58,7 @@ class SettingsTVC: UITableViewController {
         APICnt.text = ("\(Int(sliderCnt.value))")
         
     }
+
 
     
     @IBAction func touchIdSecurity(sender: UISwitch) {
