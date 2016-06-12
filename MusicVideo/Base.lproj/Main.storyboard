@@ -288,7 +288,9 @@
                         <outlet property="APICnt" destination="HHh-Yn-rz8" id="FIY-gX-dmt"/>
                         <outlet property="aboutDisplay" destination="I6Q-Lp-Soi" id="bzX-vA-OhI"/>
                         <outlet property="bestImageDisplay" destination="oAK-gf-Y25" id="ihE-wZ-N0u"/>
+                        <outlet property="dragSliderDisplay" destination="aKB-DQ-Ffr" id="7RG-cq-ZmV"/>
                         <outlet property="feedbackDisplay" destination="fHT-zH-GWA" id="nkt-Bu-9Q7"/>
+                        <outlet property="numberVideosDisplay" destination="EBs-hv-MNp" id="v6V-uc-6CT"/>
                         <outlet property="securityDisplay" destination="D9y-Vx-NI4" id="A3o-g8-ZzE"/>
                         <outlet property="sliderCnt" destination="iLC-CT-8kK" id="djl-gB-Jsq"/>
                         <outlet property="touchID" destination="gl5-1M-fmb" id="Skd-rw-cel"/>
@@ -464,6 +466,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="azp-FK-hdo"/>
                         <barButtonItem systemItem="action" id="Igf-cg-M2i">
                             <color key="tintColor" red="1" green="0.01132959838" blue="0.031957017919999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="socialMedia:" destination="Myz-Oe-tiB" id="Nd8-zZ-Q1A"/>
+                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <connections>
